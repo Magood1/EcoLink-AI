@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "d2d-rl-thesis-final"
+version = "2.0.0"
+description = "A production-quality and reproducible codebase for DRL-based resource allocation in D2D networks."
+authors = ["AI Project Mentor <mentor@ai.dev>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.12"
+torch = "^2.1.0"
+gymnasium = "^0.29.1"
+numpy = "^1.26.2"
+pyyaml = "^6.0.1"
+pandas = "^2.1.4"
+matplotlib = "^3.8.2"
+tensorboard = "^2.15.1"
+tqdm = "^4.66.1"
+scipy = "^1.11.4"
+pydantic = "^2.5.3"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.3"
+ruff = "^0.1.9"
+black = "^23.12.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

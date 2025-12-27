@@ -1,0 +1,10 @@
+#final_evaluation_summary_std.csv
+
+agent,                  reward,             throughput_mbps,  energy_efficiency_bits_per_joule,   cue_outage_rate
+
+DQN_Agent,          271.8494426947557,      84.66479788654534,      1,235,460,175.416144,          0.27645717829090893
+
+Greedy_Policy,      110.84175871458199,     98.57333411726229,      123,216,667.64657786,         0.14820352800890302
+
+Random_Policy,      107.14883124718034,     64.70770477822853,      163555189.29040247,         0.12105745810674082
+

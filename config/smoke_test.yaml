@@ -1,0 +1,45 @@
+# File: configs/smoke_test.yaml
+# Minimal but complete smoke test derived from configs/base_config.yaml
+
+env:
+  num_cues: 2
+  num_ddps: 2
+  area_size: 500
+  bandwidth: 5000000.0
+  noise_dbm_per_hz: -174.0
+  cue_tx_power_max_dbm: 23.0
+  ddp_tx_power_max_dbm: 20.0
+  episode_length: 10
+  power_levels: 5
+  reward_config:
+    reward_ee_weight: 1.0
+    reward_throughput_weight: 0.0
+    interference_penalty_scale: 1.0
+    max_penalty: 5.0
+    qos_threshold_db: 5.0
+    tanh_scale: 5.0
+
+agent:
+  name: "dqn"
+  gamma: 0.99
+  epsilon_start: 1.0
+  epsilon_end: 0.05
+  epsilon_decay_steps: 50
+  learning_rate: 0.0001
+  buffer_size: 100
+  batch_size: 16
+  tau: 0.005
+  use_double_dqn: true
+  use_dueling_dqn: false
+  grad_clip_norm: 10.0
+  network:
+    hidden_dims: [64, 64]
+
+training:
+  seed: 42
+  device: "cpu"                    # safe default for smoke tests (change to "cuda" if GPU available)
+  num_episodes: 5
+  eval_freq: 2
+  eval_episodes: 1
+  results_dir: "data/smoke_test"
+  model_filename: "dqn_smoke_test.pth"

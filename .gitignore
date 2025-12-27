@@ -1,0 +1,21 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environments
+venv/
+.venv/
+env/
+
+# IDE specific settings (لا نريد رفع إعدادات المحرر الخاص بك)
+.idea/
+.vscode/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Large data or logs (اختياري: إذا كنت تريد رفع النتائج اتركها، إذا كانت كبيرة جداً احذف الهاش #)
+# data/
+# *.pth

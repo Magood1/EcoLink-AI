@@ -1,0 +1,46 @@
+# Base configuration for all experiments
+# Final version with tunable weights for the reward components.
+# Production-ready configuration with robust reward shaping and agent stability features.
+
+env:
+  num_cues: 4
+  num_ddps: 8
+  area_size: 500
+  bandwidth: 5000000.0
+  noise_dbm_per_hz: -174.0
+  cue_tx_power_max_dbm: 23.0
+  ddp_tx_power_max_dbm: 20.0
+  episode_length: 100
+  power_levels: 5
+  reward_config:
+    reward_ee_weight: 1.0           # Weight for the log-scaled energy efficiency component
+    reward_throughput_weight: 0.0   # Weight for a potential throughput component (currently off)
+    interference_penalty_scale: 1.0 # Scales the magnitude of the QoS violation penalty
+    max_penalty: 5.0                # Clips the penalty per CUE to this value
+    qos_threshold_db: 5.0
+    tanh_scale: 5.0                 # Scales the final reward using tanh to bound it
+
+agent:
+  name: "dqn"
+  gamma: 0.99
+  epsilon_start: 1.0
+  epsilon_end: 0.05
+  epsilon_decay_steps: 100000 # Increased for more exploration
+  learning_rate: 0.0001
+  buffer_size: 100000
+  batch_size: 64
+  tau: 0.005
+  use_double_dqn: true
+  use_dueling_dqn: false
+  grad_clip_norm: 10.0
+  network:
+    hidden_dims: [256, 256]
+
+training:
+  seed: 42
+  device: "cuda"
+  num_episodes: 2000
+  eval_freq: 50
+  eval_episodes: 20
+  results_dir: "data"
+  model_filename: "dqn_best.pth"
