@@ -70,18 +70,19 @@ graph TD
     F --> G[Checkpoints & TensorBoard Logs];
 
 # Project Structure
-d2d_rl/
-├── config/              # YAML Configs & Smoke Tests
-├── src/
-│   ├── agents/          # DQN Logic & Baselines (Proportional Fair)
-│   ├── envs/            # Gymnasium Environment & Physics Models
-│   ├── utils/           # Metrics (Jain's Fairness, EE) & Logging
-│   └── config_schema.py # Pydantic Validation Schemas
-├── Dockerfile           # Containerization setup
-├── pyproject.toml       # Poetry Dependency Management
-├── train.py             # Training Entry Point
-├── evaluate.py          # Evaluation & Visualization Pipeline
-└── README.md            # Documentation
+### d2d_rl/
+### ├── config/              # YAML Configs & Smoke Tests
+### ├── src/
+### │   ├── agents/          # DQN Logic & Baselines (Proportional Fair)
+### │   ├── envs/            # Gymnasium Environment & Physics Models
+### │   ├── utils/           # Metrics (Jain's Fairness, EE) & Logging
+### │   └── config_schema.py # Pydantic Validation Schemas
+### ├── Dockerfile           # Containerization setup
+### ├── pyproject.toml       # Poetry Dependency Management
+### ├── train.py             # Training Entry Point
+### ├── evaluate.py          # Evaluation & Visualization Pipeline
+### └── README.md            # Documentation
+
 # Tech Stack
 Core: Python 3.10
 ML Framework: PyTorch
