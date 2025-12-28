@@ -31,8 +31,7 @@ Insight: While the Greedy policy maximizes raw throughput, it causes catastrophi
 Quick Start
 Option A: Using Docker (Recommended)
 Run the entire training and evaluation pipeline in a container to guarantee reproducibility.
-code
-Bash
+
 # Build the image
 docker build -t ecolink-ai .
 
@@ -40,8 +39,7 @@ docker build -t ecolink-ai .
 docker run ecolink-ai python train.py --config configs/smoke_test.yaml
 Option B: Local Setup (Poetry/Pip)
 Prerequisites: Python 3.10+, Poetry (optional)
-code
-Bash
+
 # 1. Clone Repository
 git clone https://github.com/Magood1/EcoLink-AI.git
 cd d2d_rl
