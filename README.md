@@ -55,17 +55,15 @@ python train.py --config config/base_config.yaml
 python evaluate.py --config config/base_config.yaml --model-path data/dqn_best.pth --num-seeds 10
 System Workflow
 The project follows a rigorous data flow pipeline:
-code
-Mermaid
-graph TD
-    A[Config (YAML + Pydantic)] -->|Validate| B(Experiment Setup);
-    B --> C[D2D Environment (Physics Engine)];
-    C -->|State (SINR, Gains)| D[DQN Agent];
-    D -->|Action (Power Level)| C;
-    C -->|Reward (EE - Penalty)| D;
-    D -->|Store Transition| E[Replay Buffer];
-    E -->|Batch Sample| F[Optimization Step (PyTorch)];
-    F --> G[Checkpoints & TensorBoard Logs];
+## graph TD
+###    A[Config (YAML + Pydantic)] -->|Validate| B(Experiment Setup);
+###    B --> C[D2D Environment (Physics Engine)];
+###    C -->|State (SINR, Gains)| D[DQN Agent];
+###    D -->|Action (Power Level)| C;
+###    C -->|Reward (EE - Penalty)| D;
+###    D -->|Store Transition| E[Replay Buffer];
+###    E -->|Batch Sample| F[Optimization Step (PyTorch)];
+###    F --> G[Checkpoints & TensorBoard Logs];
 
 # Project Structure
 ### d2d_rl/
