@@ -133,6 +133,6 @@ Open a Pull Request
 
 # Author
 
-Magood1
-Backend & AI Engineer
-Focus: Scalable AI Systems, Wireless Network Optimization, and Python Software Architecture.
+#### Magood1
+#### Backend & AI Engineer
+#### Focus: Scalable AI Systems, Wireless Network Optimization, and Python Software Architecture.
