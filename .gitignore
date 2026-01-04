@@ -17,5 +17,5 @@ env/
 Thumbs.db
 
 # Large data or logs (اختياري: إذا كنت تريد رفع النتائج اتركها، إذا كانت كبيرة جداً احذف الهاش #)
-# data/
-# *.pth
+data/
+*.pth
