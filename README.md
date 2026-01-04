@@ -55,31 +55,33 @@ python train.py --config config/base_config.yaml
 python evaluate.py --config config/base_config.yaml --model-path data/dqn_best.pth --num-seeds 10
 System Workflow
 The project follows a rigorous data flow pipeline:
-## graph TD
-###    A[Config (YAML + Pydantic)] -->|Validate| B(Experiment Setup);
-###    B --> C[D2D Environment (Physics Engine)];
-###    C -->|State (SINR, Gains)| D[DQN Agent];
-###    D -->|Action (Power Level)| C;
-###    C -->|Reward (EE - Penalty)| D;
-###    D -->|Store Transition| E[Replay Buffer];
-###    E -->|Batch Sample| F[Optimization Step (PyTorch)];
-###    F --> G[Checkpoints & TensorBoard Logs];
-
-# Project Structure
-### d2d_rl/
-### ├── config/              # YAML Configs & Smoke Tests
-### ├── src/
-### │   ├── agents/          # DQN Logic & Baselines (Proportional Fair)
-### │   ├── envs/            # Gymnasium Environment & Physics Models
-### │   ├── utils/           # Metrics (Jain's Fairness, EE) & Logging
-### │   └── config_schema.py # Pydantic Validation Schemas
-### ├── Dockerfile           # Containerization setup
-### ├── pyproject.toml       # Poetry Dependency Management
-### ├── train.py             # Training Entry Point
-### ├── evaluate.py          # Evaluation & Visualization Pipeline
-### └── README.md            # Documentation
-
-# Tech Stack
+code
+Mermaid
+graph TD
+    A[Config (YAML + Pydantic)] -->|Validate| B(Experiment Setup);
+    B --> C[D2D Environment (Physics Engine)];
+    C -->|State (SINR, Gains)| D[DQN Agent];
+    D -->|Action (Power Level)| C;
+    C -->|Reward (EE - Penalty)| D;
+    D -->|Store Transition| E[Replay Buffer];
+    E -->|Batch Sample| F[Optimization Step (PyTorch)];
+    F --> G[Checkpoints & TensorBoard Logs];
+Project Structure
+code
+Text
+d2d_rl/
+├── config/              # YAML Configs & Smoke Tests
+├── src/
+│   ├── agents/          # DQN Logic & Baselines (Proportional Fair)
+│   ├── envs/            # Gymnasium Environment & Physics Models
+│   ├── utils/           # Metrics (Jain's Fairness, EE) & Logging
+│   └── config_schema.py # Pydantic Validation Schemas
+├── Dockerfile           # Containerization setup
+├── pyproject.toml       # Poetry Dependency Management
+├── train.py             # Training Entry Point
+├── evaluate.py          # Evaluation & Visualization Pipeline
+└── README.md            # Documentation
+🛠 Tech Stack
 Core: Python 3.10
 ML Framework: PyTorch
 Environment: Gymnasium (OpenAI), NumPy
